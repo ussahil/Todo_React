@@ -1,0 +1,8 @@
+.taskTitle {
+  font-size: 2rem;
+}
+.taskInput {
+  padding: 1rem;
+  font: 1rem sans-serif;
+  border-radius: 10px grey solid;
+}
