@@ -1,19 +1,22 @@
-import { useState } from "react";
-import style from "./AddUser.module.css";
-const AddUser = () => {
-  //useState
-  const [newData, setNewData] = useState("");
+import Button from "../UI/Button";
+import "./AddUser.css";
+const AddUser = (props) => {
+  console.log(props.data);
+  const data = props.data;
+  // for delete I have to pass the data back to the state/app one;
 
   return (
-    <form>
-      <h3 className={style.taskTitle}>Enter Task</h3>
-      <label htmlFor="task"></label>
-      <input
-        id="task"
-        className={style.taskInput}
-        placeholder="Enter Task "
-      ></input>
-    </form>
+    // <div></div>
+    <ul>
+      {data.map((user) => (
+        <li key={user[0].id} className="list">
+          {user[0].enteredData}
+          <Button type="" id={user[0].id} onClick={props.onConfirm}>
+            delete
+          </Button>
+        </li>
+      ))}
+    </ul>
   );
 };
 
